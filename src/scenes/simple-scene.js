@@ -3,7 +3,6 @@ var shrubs;
 var player;
 var cursors;
 var bones;
-var boneCount = 3;
 
 export class SimpleScene extends Phaser.Scene {
 
@@ -42,28 +41,8 @@ export class SimpleScene extends Phaser.Scene {
     shrubs.create(630, 290, 'Shrubs');
 
     //Create the Bones to be collected
-    bones = this.physics.add.staticGroup({
-      key: "Bone",
-      repeat: boneCount
-    })
-
-     bones.children.iterate(function(bone) {
-       // bone.setX(Phaser.Math.FloatBetween(32, config.width - 32));
-       // bone.setY(Phaser.Math.FloatBetween(32, config.height - 32));
-       // if (bone.x > config.width - 32) {
-       //   bone.setX(config.width - 48);
-       // } else if (bone.x < 32) {
-       //   bone.setX(48);
-       // }
-       //
-       // if (bone.y > config.height - 32) {
-       //   bone.setY(config.height - 48);
-       // } else if (bone.y < 32) {
-       //   bone.setY(48);
-       // }
-     });
-
-     bones.refresh();
+    bones = this.physics.add.staticGroup();
+    bones.create(55,420, 'Bone')
 
     // Creates the player
     player = this.physics.add.sprite(50, 550, "Miko");
