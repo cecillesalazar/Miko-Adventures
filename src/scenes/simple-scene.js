@@ -20,7 +20,7 @@ export class SimpleScene extends Phaser.Scene {
 
   create() {
     // Create the Background
-    this.add.image(400, 300, 'Background');
+    this.add.sprite(400, 300, 'Background');
 
     // Create the Static trees
     trees = this.physics.add.staticGroup();
