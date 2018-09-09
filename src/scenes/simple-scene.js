@@ -40,6 +40,7 @@ export class SimpleScene extends Phaser.Scene {
     shrubs.create(630, 290, 'Shrubs');
 
     player = this.physics.add.sprite(50, 550, "Miko");
+    player.setCollideWorldBounds(true);
     cursors = this.input.keyboard.createCursorKeys();
 
     this.anims.create({
