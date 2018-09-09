@@ -26,16 +26,16 @@ export class SimpleScene extends Phaser.Scene {
 
     // Create the Static trees
     trees = this.physics.add.staticGroup();
-    trees.create(160, 450, 'Trees');
-    trees.create(625, 450, 'Trees');
-    trees.create(160, 150, 'Trees');
-    trees.create(625, 150, 'Trees');
+    trees.create(160, 472, 'Trees');
+    trees.create(625, 472, 'Trees');
+    trees.create(160, 110, 'Trees');
+    trees.create(625, 110, 'Trees');
 
     // Create the Static shrubs
     shrubs = this.physics.add.staticGroup();
     shrubs.create(400, 290, 'Shrubs');
-    shrubs.create(400, 130, 'Shrubs');
-    shrubs.create(400, 455, 'Shrubs');
+    shrubs.create(400, 110, 'Shrubs');
+    shrubs.create(400, 460, 'Shrubs');
     shrubs.create(150, 290, 'Shrubs');
     shrubs.create(630, 290, 'Shrubs');
 
