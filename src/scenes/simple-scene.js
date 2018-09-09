@@ -9,7 +9,7 @@ export class SimpleScene extends Phaser.Scene {
   preload() {
     this.load.image('Background', '../../assets/Green-Background.png');
     this.load.image('Trees', '../../assets/Tree-Apple-Right.gif');
-    this.load.image('Shrubs', '../../assets/Shrub.gif');
+    this.load.image('Shrubs', '../../assets/small-shrub.gif');
     this.load.image('Bone', '../../assets/Dog-Bone.gif');
     this.load.spritesheet(
       'Miko',
@@ -29,16 +29,16 @@ export class SimpleScene extends Phaser.Scene {
     trees = this.physics.add.staticGroup();
     trees.create(160, 472, 'Trees');
     trees.create(625, 472, 'Trees');
-    trees.create(160, 110, 'Trees');
-    trees.create(625, 110, 'Trees');
+    trees.create(160, 133, 'Trees');
+    trees.create(625, 133, 'Trees');
 
     // Create the Static shrubs
     shrubs = this.physics.add.staticGroup();
-    shrubs.create(400, 290, 'Shrubs');
+    shrubs.create(400, 300, 'Shrubs');
     shrubs.create(400, 110, 'Shrubs');
-    shrubs.create(400, 460, 'Shrubs');
-    shrubs.create(150, 290, 'Shrubs');
-    shrubs.create(630, 290, 'Shrubs');
+    shrubs.create(400, 500, 'Shrubs');
+    shrubs.create(150, 300, 'Shrubs');
+    shrubs.create(630, 300, 'Shrubs');
 
     //Create the Bones to be collected
     bones = this.physics.add.staticGroup();
