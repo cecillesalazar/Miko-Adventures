@@ -25,14 +25,14 @@ export class SimpleScene extends Phaser.Scene {
     // Create the Background
     this.add.sprite(400, 300, 'Background');
 
-    // Create the Static trees
+    // Create the Static Trees
     trees = this.physics.add.staticGroup();
     trees.create(160, 472, 'Trees');
     trees.create(625, 472, 'Trees');
     trees.create(160, 133, 'Trees');
     trees.create(625, 133, 'Trees');
 
-    // Create the Static shrubs
+    // Create the Static Shrubs
     shrubs = this.physics.add.staticGroup();
     shrubs.create(400, 300, 'Shrubs');
     shrubs.create(400, 110, 'Shrubs');
@@ -40,14 +40,14 @@ export class SimpleScene extends Phaser.Scene {
     shrubs.create(150, 300, 'Shrubs');
     shrubs.create(630, 300, 'Shrubs');
 
-    //Create the Bones to be collected
+    //Create the Bones to be Collected
     bones = this.physics.add.staticGroup();
     bones.create(150,380, 'Bone')
     bones.create(520,210, 'Bone')
     bones.create(730,500, 'Bone')
     bones.create(55,100, 'Bone')
 
-    // Creates the player
+    // Creates the Player
     player = this.physics.add.sprite(50, 550, "Miko");
     player.setCollideWorldBounds(true);
     cursors = this.input.keyboard.createCursorKeys();
@@ -86,10 +86,11 @@ export class SimpleScene extends Phaser.Scene {
       repeat: -1
     });
 
-    // Allows player to not overlap trees and shrubs
+    // Allows player to not Overlap Trees and Shrubs
     this.physics.add.collider(player, trees);
     this.physics.add.collider(player, shrubs);
 
+    // Allows for Disappearance of Bones upon Contact with Player
     function collectBone (player, bones) {
       bones.disableBody(true, true);
     }
