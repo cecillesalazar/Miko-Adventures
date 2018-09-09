@@ -10,7 +10,7 @@ export class SimpleScene extends Phaser.Scene {
     this.load.image('Background', '../../assets/Green-Background.png');
     this.load.image('Trees', '../../assets/Tree-Apple-Right.gif');
     this.load.image('Shrubs', '../../assets/Shrub.gif');
-    this.load.image('Bone', '../../assets/bone.gif');
+    this.load.image('Bone', '../../assets/Dog-Bone.gif');
     this.load.spritesheet(
       'Miko',
       '../../assets/miko-all-directions.png',
