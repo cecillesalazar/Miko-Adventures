@@ -49,12 +49,53 @@ export class SimpleScene extends Phaser.Scene {
       repeat: -1
     });
 
+    this.anims.create({
+      key: 'left',
+      frames: this.anims.generateFrameNumbers('Miko', { start: 0, end: 3 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
+    this.anims.create({
+      key: 'turn',
+      frames: [ { key: 'Miko', frame: 4 } ],
+      frameRate: 20
+    });
+
+    this.anims.create({
+      key: 'up',
+      frames: this.anims.generateFrameNumbers('Miko', { start: 9, end: 12 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
+    this.anims.create({
+      key: 'down',
+      frames: this.anims.generateFrameNumbers('Miko', { start: 13, end: 16 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
   }
 
   update() {
     if (cursors.right.isDown) {
       player.setVelocityX(160);
       player.anims.play('right', true);
-    } 
+    } else if (cursors.left.isDown) {
+      player.setVelocityX(-160);
+      player.anims.play('left', true);
+    } else if (cursors.up.isDown) {
+      player.setVelocityY(-160);
+      player.anims.play('up', true);
+    } else if (cursors.down.isDown) {
+      player.setVelocityY(160);
+      player.anims.play('down', true);
+    } else {
+      player.setVelocityX(0);
+      player.setVelocityY(0);
+      player.anims.play('turn');
+    }
+
   }
 }
