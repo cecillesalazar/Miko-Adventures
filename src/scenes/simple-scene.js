@@ -42,7 +42,10 @@ export class SimpleScene extends Phaser.Scene {
 
     //Create the Bones to be collected
     bones = this.physics.add.staticGroup();
-    bones.create(55,420, 'Bone')
+    bones.create(150,380, 'Bone')
+    bones.create(520,210, 'Bone')
+    bones.create(730,500, 'Bone')
+    bones.create(55,100, 'Bone')
 
     // Creates the player
     player = this.physics.add.sprite(50, 550, "Miko");
