@@ -1,5 +1,7 @@
 var trees;
 var shrubs;
+var player;
+var cursors;
 
 export class SimpleScene extends Phaser.Scene {
 
@@ -37,5 +39,22 @@ export class SimpleScene extends Phaser.Scene {
     shrubs.create(150, 290, 'Shrubs');
     shrubs.create(630, 290, 'Shrubs');
 
+    player = this.physics.add.sprite(50, 550, "Miko");
+    cursors = this.input.keyboard.createCursorKeys();
+
+    this.anims.create({
+      key: 'right',
+      frames: this.anims.generateFrameNumbers('Miko', { start: 5, end: 8 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
+  }
+
+  update() {
+    if (cursors.right.isDown) {
+      player.setVelocityX(160);
+      player.anims.play('right', true);
+    } 
   }
 }
