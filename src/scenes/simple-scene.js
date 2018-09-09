@@ -2,6 +2,8 @@ var trees;
 var shrubs;
 var player;
 var cursors;
+var bones;
+var boneCount = 3;
 
 export class SimpleScene extends Phaser.Scene {
 
@@ -38,6 +40,28 @@ export class SimpleScene extends Phaser.Scene {
     shrubs.create(400, 460, 'Shrubs');
     shrubs.create(150, 290, 'Shrubs');
     shrubs.create(630, 290, 'Shrubs');
+
+    // Creates the Static Bones
+    bones = this.physics.add.staticGroup({
+      key: "Bone",
+      repeat: boneCount
+    })
+
+    bones.children.iterate(function(bone) {
+      // bone.setX(Phaser.Math.FloatBetween(32, config.width - 32));
+      // bone.setY(Phaser.Math.FloatBetween(32, config.height - 32));
+      // if (bone.x > config.width - 32) {
+      //   bone.setX(config.width - 48);
+      // } else if (bone.x < 32) {
+      //   bone.setX(48);
+      // }
+      //
+      // if (bone.y > config.height - 32) {
+      //   bone.setY(config.height - 48);
+      // } else if (bone.y < 32) {
+      //   bone.setY(48);
+      // }
+    });
 
     player = this.physics.add.sprite(50, 550, "Miko");
     player.setCollideWorldBounds(true);
@@ -80,6 +104,12 @@ export class SimpleScene extends Phaser.Scene {
     // Allows player to not overlap trees and shrubs
     this.physics.add.collider(player, trees);
     this.physics.add.collider(player, shrubs);
+
+    function collectBone (player, bones) {
+      bones.disableBody(true, true);
+    }
+
+    this.physics.add.overlap(player, bones, collectBone, null, this);
 
   }
 
