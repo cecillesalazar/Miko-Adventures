@@ -77,6 +77,10 @@ export class SimpleScene extends Phaser.Scene {
       repeat: -1
     });
 
+    // Allows player to not overlap trees and shrubs
+    this.physics.add.collider(player, trees);
+    this.physics.add.collider(player, shrubs);
+
   }
 
   update() {
