@@ -36,11 +36,11 @@ var SimpleScene = exports.SimpleScene = function (_Phaser$Scene) {
   _createClass(SimpleScene, [{
     key: 'preload',
     value: function preload() {
-      this.load.image('Background', '/assets/Green-Background.png');
-      this.load.image('Trees', '/assets/Tree-Apple-Right.gif');
-      this.load.image('Shrubs', '/assets/small-shrub.gif');
-      this.load.image('Bone', '/assets/Dog-Bone.gif');
-      this.load.spritesheet('Miko', '/assets/miko-all-directions.png', {
+      this.load.image('Background', 'assets/Green-Background.png');
+      this.load.image('Trees', 'assets/Tree-Apple-Right.gif');
+      this.load.image('Shrubs', 'assets/small-shrub.gif');
+      this.load.image('Bone', 'assets/Dog-Bone.gif');
+      this.load.spritesheet('Miko', 'assets/miko-all-directions.png', {
         frameWidth: 64,
         frameHeight: 64
       });
