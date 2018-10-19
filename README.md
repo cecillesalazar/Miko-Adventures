@@ -1,4 +1,4 @@
-Miko's Adventure is a pixel game of my Shiba inu's daily adventures built with Phaser3, an HTML5 and Javascript game engine.
+Miko's Adventure is a pixel game of my Shiba inu's daily adventures built with Phaser3, an HTML5/Javascript game engine.
 
 ![Miko Adventure game canvas](https://s25.postimg.cc/8x12k7gun/Screen_Shot_2018-09-05_at_2.29.38_PM.png)
 
